@@ -11,7 +11,7 @@
  | |___ >  <| ||  __/ | | | (_| |  __/ |         
  |_____/_/\_\\__\___|_| |_|\__,_|\___|_|         
  
- Updated 2025.01.09
+ Updated 2025.02.03
                                                  
 """
 
@@ -35,7 +35,7 @@ from Bio.Seq import Seq
 # ARGUMENT PARSER
 def parse_arguments():
     parser = argparse.ArgumentParser(description = "Extend a set of alignments with available species data from NCBI")
-    parser.add_argument("--spp", required = True, help = "Species to be added")
+    parser.add_argument("--spp", required = True, help = "List of species to be added")
     parser.add_argument("--omam", required = True, help = "Folder containing OrthoMaM alignments")
     parser.add_argument("--out", required = True, help = "Output folder for extended alignments")
     
@@ -109,7 +109,7 @@ def process_alignment(fasta_id, fasta_name, in_folder, out_folder, spp_add):
     # Convert consensus sequence to SeqRecord for BLAST formatting
     consensus_record = SeqRecord(consensus_seq, id="Consensus_Seq", description="Consensus sequence for BLAST")
     
-    # Add new species to alignment
+    # Add new species to alignmen
     updated_records = add_new_species(consensus_record, records, spp_add)
     
     # Save alignment in 2-line FASTA format
