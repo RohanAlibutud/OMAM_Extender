@@ -100,19 +100,17 @@ def calculate_consensus(records):
 def process_alignment(fasta_id, fasta_name, in_folder, out_folder, spp_add):
     print(f"Processing alignment: {fasta_id}")
     
-    # Open alignment file and convert it to 2-line FASTA format
+    # open alignment file and convert it to 2-line FASTA format
     records = list(SeqIO.parse(f"{in_folder}/{fasta_name}", "fasta"))
     
-    # Calculate consensus sequence
+    # calculate consensus sequence and convert to BLAST format
     consensus_seq = calculate_consensus(records)
-    
-    # Convert consensus sequence to SeqRecord for BLAST formatting
     consensus_record = SeqRecord(consensus_seq, id="Consensus_Seq", description="Consensus sequence for BLAST")
     
-    # Add new species to alignmen
+    # add new species to alignment
     updated_records = add_new_species(consensus_record, records, spp_add)
     
-    # Save alignment in 2-line FASTA format
+    # save alignment in 2-line FASTA format
     out_file = f"{out_folder}/{fasta_name}"
     with open(out_file, "w") as output_handle:
         for record in updated_records:
