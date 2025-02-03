@@ -57,11 +57,11 @@ python alignment_extender.py --spp "Homo_sapiens,Pan_troglodytes" --omam ./align
 - The consensus sequence thing is a kludge and is probably highly questionable tbh
 - The script filters BLAST hits based on E-value (< 0.001) and sequence coverage (> 70%).
 
-## 📜 License
+## License
 
 This project is licensed under the MIT License.
 
-## 🙋 Acknowledgments
+## Acknowledgments
 
 Built using Biopython and NCBI BLAST APIs.
 
