@@ -7,7 +7,7 @@ This is a script designed to add new target species to the MSAs from OrthoMaM by
 - Adds high-confidence BLAST hits to the alignments
 - Outputs alignments in 2-line FASTA format
 
-## 📦 Requirements
+## Requirements
 
 - Python 3.x
 - Biopython
